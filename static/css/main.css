@@ -1,0 +1,249 @@
+main {
+    margin: var(--space-lg) auto;
+    max-width: 1100px;
+    width: 100%;
+    padding: 0 var(--space-md);
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Orbitron:400,700&display=swap');
+
+:root {
+    --bg-neutral: #1a1333;
+    --accent: #a259f7;
+    --accent-soft: #ede7f6;
+    --accent-strong: #7c43bd;
+    --accent-gradient: linear-gradient(135deg, #a259f7 0%, #7c43bd 100%);
+        --text-main: #222; /* Negro para fondos claros */
+    --text-secondary: #b39ddb;
+    --font-main: 'Montserrat', 'Orbitron', 'Arial', sans-serif;
+    --font-ui: 'Orbitron', 'Montserrat', 'Arial', sans-serif;
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 3rem;
+    --radius: 14px;
+    --shadow-tech: 0 4px 24px rgba(162,89,247,0.18);
+}
+
+/* Navbar moderno */
+.navbar {
+    background: var(--accent-gradient);
+    border-bottom: 2px solid var(--accent-strong);
+    padding: var(--space-sm) 0;
+    box-shadow: var(--shadow-tech);
+}
+.navbar-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+    color: #fff;
+        --bg-neutral: #f8f5f2;
+        --bg-gradient: linear-gradient(135deg, #e9d8c3 0%, #bfa980 100%);
+        --accent: #8d6e63;
+        --accent-soft: #f3e9e1;
+        --accent-strong: #6d4c41;
+        --accent-gradient: linear-gradient(135deg, #a1887f 0%, #8d6e63 100%);
+        --accent-gradient-strong: linear-gradient(135deg, #6d4c41 0%, #bfa980 100%);
+        --text-main: #4e342e;
+        --text-secondary: #a1887f;
+        --font-main: 'Montserrat', 'Arial', sans-serif;
+        --font-ui: 'Montserrat', 'Arial', sans-serif;
+        --space-xs: 0.5rem;
+        --space-sm: 1rem;
+        --space-md: 2rem;
+        --space-lg: 3rem;
+        --radius: 16px;
+        --shadow-tech: 0 4px 32px rgba(141, 110, 99, 0.18);
+}
+.navbar-link:hover {
+    background: var(--accent);
+        font-family: var(--font-main);
+        background: var(--bg-gradient);
+        color: var(--text-main);
+        margin: 0;
+        padding: 0;
+        line-height: 1.7;
+        font-size: 0.97rem;
+        letter-spacing: 0.01em;
+    font-family: var(--font-main);
+    min-height: 100vh;
+    letter-spacing: 0.5px;
+    padding: var(--space-sm) 0;
+    color: #7c6f5a;
+    font-family: var(--font-ui);
+}
+/* Footer moderno */
+.footer-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1rem;
+}
+
+body {
+    font-family: var(--font-main);
+        background: var(--bg-neutral);
+        color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    font-size: 1.05rem;
+
+    /* Texto negro en bloques claros */
+    .public-content,
+    .earthy-theme,
+    .qr-sunday-container,
+    .card,
+    [style*="background: #fff"],
+    [style*="background: #fffbe7"],
+    [style*="background: #f8f5f2"],
+    [style*="background: var(--bg-neutral)"] {
+        color: #222 !important;
+    }
+
+    /* Asegura que los títulos y párrafos en fondos claros sean negros */
+    .public-content h1, .public-content h2, .public-content h3, .public-content h4, .public-content p,
+    .qr-sunday-container h1, .qr-sunday-container h2, .qr-sunday-container h3, .qr-sunday-container h4, .qr-sunday-container p {
+        color: #222 !important;
+    }
+    letter-spacing: 0.01em;
+    font-family: var(--font-main);
+    background: var(--bg-neutral);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    font-size: 0.97rem;
+    letter-spacing: 0.01em;
+}
+
+main, .features > div, .footer {
+    color: #fff !important;
+}
+.hero-content {
+    text-align: left;
+}
+.hero-headline {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    color: var(--accent);
+    letter-spacing: 0.02em;
+    font-family: var(--font-main);
+}
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+    font-family: var(--font-main);
+}
+.hero-cta {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background 0.2s;
+    font-family: var(--font-main);
+}
+.hero-cta:hover {
+    background: #8c6841;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .hero-content {
+        text-align: center;
+    }
+    .hero-headline {
+        font-size: 2.2rem;
+    }
+}
+
+.features {
+    gap: var(--space-md);
+}
+.features h2 {
+    margin-bottom: var(--space-xs);
+    font-family: var(--font-ui);
+}
+.features > div {
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px #e9d8c3;
+    padding: var(--space-md);
+    background: var(--accent-soft);
+    font-family: var(--font-main);
+    margin-bottom: var(--space-md);
+}
+
+.description {
+    margin: var(--space-md) auto;
+    padding: var(--space-sm);
+}
+
+body {
+    font-family: var(--font-main);
+    background: var(--bg-neutral);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.hero {
+    background: var(--accent-gradient);
+    padding: var(--space-lg) 0;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-tech);
+}
+
+.features h2 {
+    margin-bottom: var(--space-xs);
+    font-family: var(--font-ui);
+}
+
+nav {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: var(--space-sm) 0;
+    font-family: var(--font-ui);
+}
+
+.footer {
+    background: var(--accent-gradient-strong);
+    border-top: 2px solid var(--accent);
+    padding: var(--space-sm) 0;
+    text-align: center;
+    color: var(--text-main);
+    font-family: var(--font-ui);
+}
+
+.features {
+    gap: var(--space-md);
+}
+
+.features > div {
+    border-radius: var(--radius);
+    box-shadow: 0 2px 16px #7c43bd44;
+    padding: var(--space-md);
+    background: var(--accent-gradient-strong);
+    color: #fff;
+    font-family: var(--font-main);
+    margin-bottom: var(--space-md);
+}
+
+.description {
+    margin: var(--space-md) auto;
+    padding: var(--space-sm);
+}

@@ -1,0 +1,68 @@
+
+<nav class="navbar" style="box-shadow: 0 6px 32px #7c43bd77, 0 2px 0 #a259f7;">
+    <div class="navbar-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.5em 0;">
+        <div style="display: flex; align-items: center; gap: 1em; margin-bottom: 0.5em;">
+            <img src="https://cdn-icons-png.flaticon.com/512/2721/2721296.png" alt="Logo" style="width: 38px; height: 38px; filter: drop-shadow(0 0 8px #a259f7);">
+            <span style="font-family: var(--font-ui); font-size: 1.5em; font-weight: 700; color: #fff; letter-spacing: 2px; text-shadow: 0 2px 12px #7c43bd;">Mandalas Project</span>
+        </div>
+        <ul class="navbar-menu" style="display: flex; gap: 1.5em; align-items: center; justify-content: center; width: 100%;">
+            <li>
+                <a href="/" class="navbar-btn">
+                    <span class="navbar-btn-text">Inicio</span>
+                </a>
+            </li>
+            {% if not request.user.is_authenticated %}
+                <li><a href="/login/" class="navbar-btn"><span class="navbar-btn-text">Iniciar sesión</span></a></li>
+                <li><a href="/register/" class="navbar-btn"><span class="navbar-btn-text">Registrarse</span></a></li>
+            {% else %}
+                {% if 'freeUser' in user_groups %}
+                    <li><a href="/upgrade/" class="navbar-btn navbar-btn-accent"><span class="navbar-btn-text">Mejorar a Premium</span></a></li>
+                {% endif %}
+                {% if 'premiumUser' in user_groups %}
+                    <li><a href="/premium/" class="navbar-btn navbar-btn-accent"><span class="navbar-btn-text">Contenido Premium</span></a></li>
+                {% endif %}
+                {% if 'admin' in user_groups %}
+                    <li><a href="/admin/" class="navbar-btn"><span class="navbar-btn-text">Panel admin</span></a></li>
+                {% endif %}
+                <li style="font-weight:600; color:var(--accent);">
+                    <span style="font-family: var(--font-ui); font-size: 1.05em; letter-spacing: 1px;">{{ request.user.get_username }}</span>
+                </li>
+                <li><a href="/logout/" class="navbar-btn"><span class="navbar-btn-text">Cerrar sesión</span></a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+<style>
+.navbar-btn {
+    display: inline-block;
+    background: var(--accent-gradient-strong);
+    color: #fff !important;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #7c43bd77, 0 1px 0 #a259f7;
+    padding: 0.45em 1.1em;
+    font-family: var(--font-ui);
+    font-size: 0.98em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: background 0.18s, box-shadow 0.18s, color 0.18s;
+    position: relative;
+    overflow: hidden;
+}
+.navbar-btn:hover, .navbar-btn:focus {
+    background: var(--accent-gradient);
+    color: #fff !important;
+    box-shadow: 0 4px 16px #a259f7cc, 0 1.5px 0 #7c43bd;
+    text-decoration: none;
+}
+.navbar-btn-accent {
+    background: linear-gradient(135deg, #a259f7 0%, #7c43bd 100%);
+    color: #fff !important;
+    box-shadow: 0 2px 12px #a259f7cc, 0 1px 0 #fff;
+}
+.navbar-btn-text {
+    position: relative;
+    z-index: 2;
+}
+</style>

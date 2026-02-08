@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Iniciar sesión{% endblock %}
+{% block content %}
+<div style="max-width: 400px; margin: 2rem auto; background: var(--accent-soft); border-radius: var(--radius); box-shadow: 0 2px 8px #e9d8c3; padding: 2rem;">
+    <h2 style="text-align:center; color: var(--accent); margin-bottom: 1.5rem;">Iniciar sesión</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% if error_message %}
+            <div style="color:#b00; margin-bottom:1rem;">{{ error_message }}</div>
+        {% endif %}
+        {% for field in form.visible_fields %}
+            <div style="margin-bottom: 1rem;">
+                {{ field.label_tag }}<br>
+                {{ field }}
+                {% if field.errors %}<div style="color:#b00;">{{ field.errors }}</div>{% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="hero-cta" style="width:100%;">Entrar</button>
+    </form>
+    <div style="margin-top:1rem; text-align:center;">
+        <a href="{% url 'register' %}" style="color: var(--accent); text-decoration: underline;">¿No tienes cuenta? Regístrate</a>
+    </div>
+</div>
+{% endblock %}

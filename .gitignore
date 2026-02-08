@@ -1,0 +1,83 @@
+# ===============================
+# Django
+# ===============================
+*.log
+*.pot
+*.pyc
+__pycache__/
+*.sqlite3
+db.sqlite3
+
+# ===============================
+# Django local settings & secrets
+# ===============================
+.env
+.env.*
+local_settings.py
+settings_local.py
+
+# ===============================
+# Media & uploads
+# ===============================
+media/
+uploads/
+
+# ===============================
+# Static files (collected)
+# ===============================
+staticfiles/
+
+# ===============================
+# Virtual environments
+# ===============================
+venv/
+.venv/
+env/
+ENV/
+
+# ===============================
+# Python
+# ===============================
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ===============================
+# Test / coverage
+# ===============================
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+pytest_cache/
+
+# ===============================
+# IDEs & editors
+# ===============================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ===============================
+# OS files
+# ===============================
+.DS_Store
+Thumbs.db
+
+# ===============================
+# Node / frontend (if added later)
+# ===============================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===============================
+# Django migrations (optional)
+# Uncomment ONLY if you know why
+# ===============================
+# */migrations/
+# !*/migrations/__init__.py

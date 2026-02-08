@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Contenido Premium{% endblock %}
+{% block content %}
+<div style="max-width:700px;margin:2rem auto;">
+    {% if 'premiumUser' in user_groups or 'admin' in user_groups %}
+        <section style="background:var(--accent-soft);padding:2rem;border-radius:var(--radius);box-shadow:0 2px 8px #e9d8c3;">
+            <h2 style="color:var(--accent);margin-bottom:1rem;">Contenido Premium Completo</h2>
+            <p style="font-size:1.1rem;">Este es el bloque completo de contenido premium, con un diseño editorial limpio y profesional. Aquí puedes mostrar artículos, recursos, videos o cualquier material exclusivo para usuarios premium.</p>
+        </section>
+        {% if 'admin' in user_groups %}
+            <div style="margin-top:2rem;padding:1rem;background:#ffe0b2;border-radius:var(--radius);">
+                <strong>Notas de administración:</strong>
+                <p>Solo los administradores pueden ver estas notas.</p>
+            </div>
+        {% endif %}
+    {% elif 'freeUser' in user_groups %}
+        <section style="background:#fffbe7;padding:2rem;border-radius:var(--radius);box-shadow:0 2px 8px #ffe082;">
+            <h2 style="color:var(--accent);margin-bottom:1rem;">Adelanto de contenido premium</h2>
+            <p style="font-size:1.1rem;">Bienvenido a la sección premium. Aquí encontrarás recursos exclusivos para el bienestar y la creatividad.</p>
+            <div style="filter: blur(4px); opacity:0.7; margin-top:1rem;">
+                <p>El resto del contenido está disponible solo para usuarios premium.</p>
+            </div>
+            <div style="margin-top:2rem; text-align:center;">
+                <a href="/upgrade/" class="hero-cta" style="background:var(--accent);color:#fff;">Actualizar a Premium</a>
+                <p style="margin-top:0.5rem;color:var(--text-secondary);font-size:0.95rem;">Elige tu ritmo. Accede cuando lo desees.</p>
+            </div>
+        </section>
+    {% else %}
+        <h2>Acceso restringido</h2>
+        <p>Por favor, inicia sesión para ver el contenido.</p>
+    {% endif %}
+</div>
+{% endblock %}
