@@ -14,7 +14,8 @@ main {
     --accent-soft: #ede7f6;
     --accent-strong: #7c43bd;
     --accent-gradient: linear-gradient(135deg, #a259f7 0%, #7c43bd 100%);
-        --text-main: #222; /* Negro para fondos claros */
+    --text-main: #222; /* Negro para fondos claros */
+    --text-main-light: #f8f5f2; /* Claro para fondos oscuros */
     --text-secondary: #b39ddb;
     --font-main: 'Montserrat', 'Orbitron', 'Arial', sans-serif;
     --font-ui: 'Orbitron', 'Montserrat', 'Arial', sans-serif;
@@ -39,25 +40,6 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-    color: #fff;
-        --bg-neutral: #f8f5f2;
-        --bg-gradient: linear-gradient(135deg, #e9d8c3 0%, #bfa980 100%);
-        --accent: #8d6e63;
-        --accent-soft: #f3e9e1;
-        --accent-strong: #6d4c41;
-        --accent-gradient: linear-gradient(135deg, #a1887f 0%, #8d6e63 100%);
-        --accent-gradient-strong: linear-gradient(135deg, #6d4c41 0%, #bfa980 100%);
-        --text-main: #4e342e;
-        --text-secondary: #a1887f;
-        --font-main: 'Montserrat', 'Arial', sans-serif;
-        --font-ui: 'Montserrat', 'Arial', sans-serif;
-        --space-xs: 0.5rem;
-        --space-sm: 1rem;
-        --space-md: 2rem;
-        --space-lg: 3rem;
-        --radius: 16px;
-        --shadow-tech: 0 4px 32px rgba(141, 110, 99, 0.18);
 }
 .navbar-link:hover {
     background: var(--accent);

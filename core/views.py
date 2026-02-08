@@ -1,3 +1,16 @@
+# Vista para listar todos los Domingos publicados
+def domingo_list(request):
+	domingos = Domingo.objects.filter(is_published=True).order_by('liturgical_time', 'sunday_number')
+	return render(request, 'domingos/list.html', {'domingos': domingos})
+from django.shortcuts import get_object_or_404
+from .models import Domingo
+# Vista para mostrar un Domingo por slug
+def domingo_detail(request, slug):
+	domingo = get_object_or_404(Domingo, slug=slug, is_published=True)
+	user_groups = []
+	if request.user.is_authenticated:
+		user_groups = list(request.user.groups.values_list('name', flat=True))
+	return render(request, 'domingos/detail.html', {'domingo': domingo, 'request': request, 'user_groups': user_groups})
 from django.contrib.auth import logout
 def logout_view(request):
 	logout(request)

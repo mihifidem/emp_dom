@@ -1,88 +1,143 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="qr-sunday-container earthy-theme" style="background: var(--bg-neutral); border-radius: 20px; padding: 2.2em 1.2em; max-width: 720px; margin: 2.5em auto; box-shadow: 0 4px 24px var(--shadow-tech); border: 2px solid var(--accent-soft);">
+<div class="qr-sunday-container earthy-theme"
+    style="background: var(--bg-neutral); border-radius: 20px; padding: 2.2em 1.2em; max-width: 1200px; margin: 2.5em auto; box-shadow: 0 4px 24px var(--shadow-tech); border: 2px solid var(--accent-soft);">
     <header class="qr-sunday-header" style="text-align: center; margin-bottom: 1.7em;">
-        <h2 class="liturgical-time" style="color: var(--accent-strong); font-size: 1.25em; margin-bottom: 0.2em; letter-spacing: 1px;">I Domingo de Adviento</h2>
-        <h1 class="sunday-title" style="color: var(--accent); font-size: 2em; font-family: var(--font-ui); margin-bottom: 0.1em;">Esperanza</h1>
-        <div style="font-size: 1.05em; color: var(--text-secondary); margin-bottom: 0.5em;">Domingo <span style="font-weight: bold; color: var(--accent-strong);">1</span></div>
+        <h2 class="liturgical-time"
+            style="color: #6b4a2b; font-size: 1.25em; margin-bottom: 0.2em; letter-spacing: 1px;">I Domingo
+            de Adviento</h2>
+        <h1 class="sunday-title"
+            style="color: #3b2c1a; font-size: 2em; font-family: var(--font-ui); margin-bottom: 0.1em;">Esperanza
+        </h1>
+        <div style="font-size: 1.05em; color: var(--text-secondary); margin-bottom: 0.5em;">Domingo <span
+                style="font-weight: bold; color: var(--accent-strong);">1</span></div>
     </header>
     <section class="qr-sunday-editorial">
         {% block qr_content %}
-        {% if not user.is_authenticated or 'freeUser' in user_groups %}
-        <div class="public-content" style="background: var(--accent-soft); border-radius: 14px; padding: 1.5em; margin-bottom: 1.5em; box-shadow: 0 2px 8px var(--shadow-tech);">
-            <h4 class="gospel-title" style="color: var(--accent-strong); font-size: 1.15em; margin-bottom: 0.5em;">Evangelio</h4>
+        {# Public/free content: always visible #}
+        <div class="public-content"
+            style="background: var(--accent-soft); border-radius: 14px; padding: 1.5em; margin-bottom: 1.5em; box-shadow: 0 2px 8px var(--shadow-tech);">
+            <h4 class="gospel-title" style="color: var(--accent-strong); font-size: 1.15em; margin-bottom: 0.5em;">
+                Evangelio</h4>
             <p class="gospel-explanation" style="font-size: 1.05em; color: var(--text-main);">
-                En este primer domingo de Adviento, el Evangelio nos invita a estar atentos y preparados, confiando en la promesa de Dios.
+                En este primer domingo de Adviento, el Evangelio nos invita a estar atentos y preparados, confiando en
+                la promesa de Dios.
             </p>
-            <h4 class="central-message" style="color: var(--accent); font-size: 1.1em; margin: 1em 0 0.5em 0; text-align: center;">Mensaje central</h4>
-            <blockquote class="central-message-text" style="font-family: var(--font-ui); color: var(--accent); font-size: 1.15em; text-align: center; background: #f8f5f2; border-left: 6px solid var(--accent-strong); margin: 0 auto 1em auto; max-width: 400px; padding: 0.5em 1em;">
+            <h4 class="central-message"
+                style="color: var(--accent); font-size: 1.1em; margin: 1em 0 0.5em 0; text-align: center;">Mensaje
+                central</h4>
+            <blockquote class="central-message-text"
+                style="font-family: var(--font-ui); color: var(--accent); font-size: 1.15em; text-align: center; background: #f8f5f2; border-left: 6px solid var(--accent-strong); margin: 0 auto 1em auto; max-width: 400px; padding: 0.5em 1em;">
                 Esperanza: La certeza de que Dios cumple sus promesas y nos acompaña en el camino.
             </blockquote>
-            <h4 class="reflection-question" style="color: var(--accent-strong); font-size: 1.05em; margin-top: 1.2em;">Preguntas para reflexionar</h4>
+            <h4 class="reflection-question" style="color: var(--accent-strong); font-size: 1.05em; margin-top: 1.2em;">
+                Preguntas para reflexionar</h4>
             <div class="accordion" style="margin-bottom: 1em;">
-                <button type="button" class="accordion-toggle" style="width: 100%; background: var(--accent); color: #fff; border: none; border-radius: 8px; padding: 0.7em 1em; font-size: 0.97em; text-align: left; margin-bottom: 0.3em; cursor: pointer;">¿En qué situaciones de tu vida necesitas renovar la esperanza?</button>
-                <div class="accordion-panel" style="display: none; background: #fff; border-radius: 0 0 8px 8px; padding: 0.7em 1em; color: var(--text-main);">
-                    A veces, cuando las cosas no salen como esperamos, podemos sentirnos tristes. Pero siempre hay motivos para volver a confiar y esperar cosas buenas.
+                <button type="button" class="accordion-toggle"
+                    style="width: 100%; background: var(--accent); color: #fff; border: none; border-radius: 8px; padding: 0.7em 1em; font-size: 0.97em; text-align: left; margin-bottom: 0.3em; cursor: pointer;">¿En
+                    qué situaciones de tu vida necesitas renovar la esperanza?</button>
+                <div class="accordion-panel"
+                    style="display: none; background: #fff; border-radius: 0 0 8px 8px; padding: 0.7em 1em; color: var(--text-main);">
+                    A veces, cuando las cosas no salen como esperamos, podemos sentirnos tristes. Pero siempre hay
+                    motivos para volver a confiar y esperar cosas buenas.
                 </div>
             </div>
             <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var acc = document.querySelectorAll('.accordion-toggle');
-                acc.forEach(function(btn) {
-                    btn.addEventListener('click', function() {
-                        var panel = btn.nextElementSibling;
-                        if (panel.style.display === 'block') {
-                            panel.style.display = 'none';
-                        } else {
-                            panel.style.display = 'block';
-                        }
+                document.addEventListener('DOMContentLoaded', function () {
+                    var acc = document.querySelectorAll('.accordion-toggle');
+                    acc.forEach(function (btn) {
+                        btn.addEventListener('click', function () {
+                            var panel = btn.nextElementSibling;
+                            if (panel.style.display === 'block') {
+                                panel.style.display = 'none';
+                            } else {
+                                panel.style.display = 'block';
+                            }
+                        });
                     });
                 });
-            });
             </script>
         </div>
-        {% endif %}
+
+        {# Premium content: only for premiumUser or admin #}
         {% if 'premiumUser' in user_groups or 'admin' in user_groups %}
-        <div class="premium-content earthy-theme" style="background: #fff; border-radius: 18px; padding: 2em 1.2em; margin-bottom: 2em; box-shadow: 0 4px 24px #e2c9a0; color: #222; position: relative; overflow: hidden; font-family: var(--font-ui); border: 2px solid var(--accent-soft);">
-            <div style="display: flex; flex-wrap: wrap; gap: 1.2em; align-items: flex-start; margin-bottom: 1.2em;">
-                <div style="flex: 1 1 180px; min-width: 140px; max-width: 220px;">
-                    <img src="https://picsum.photos/220/160?random=1" alt="Vela de esperanza" style="width: 100%; border-radius: 10px; box-shadow: 0 2px 8px #e2c9a0; margin-bottom: 0.7em; background: #f8f5f2;" loading="lazy">
-                    <div style="font-size: 0.97em; color: var(--text-secondary); text-align: center;">La vela de la esperanza, símbolo del Adviento</div>
+        <div class="premium-content earthy-theme" style="background: #fff; border-radius: 18px; padding: 2em 1.2em; margin-bottom: 2em; box-shadow: 0 4px 24px #e2c9a0; color: #222; position: relative; overflow: hidden; font-family: var(--font-ui); border: 2px solid var(--accent-soft); max-width: 1200px; margin-left: auto; margin-right: auto;">
+            <div class="tabs-extra" style="max-width: 850px; margin: 0 auto;">
+                <div class="tabs-extra-nav" style="display: flex; gap: 0.5em; justify-content: center; margin-bottom: 1.2em; border-bottom: 2.5px solid var(--accent-soft);">
+                    <span class="tab-extra-link active" data-tab="tab1" style="padding: 0.7em 1.3em; cursor: pointer; font-size: 1.05em; color: var(--accent-strong); border: none; background: none; border-bottom: 3px solid var(--accent-strong); border-radius: 10px 10px 0 0; margin-bottom: -2.5px; transition: color 0.2s, border-bottom 0.2s;">Reflexión</span>
+                    <span class="tab-extra-link" data-tab="tab2" style="padding: 0.7em 1.3em; cursor: pointer; font-size: 1.05em; color: var(--accent); border: none; background: none; border-bottom: 3px solid transparent; border-radius: 10px 10px 0 0; margin-bottom: -2.5px; transition: color 0.2s, border-bottom 0.2s;">Propuesta semanal</span>
+                    <span class="tab-extra-link" data-tab="tab3" style="padding: 0.7em 1.3em; cursor: pointer; font-size: 1.05em; color: var(--accent); border: none; background: none; border-bottom: 3px solid transparent; border-radius: 10px 10px 0 0; margin-bottom: -2.5px; transition: color 0.2s, border-bottom 0.2s;">Oración</span>
+                    <span class="tab-extra-link" data-tab="tab4" style="padding: 0.7em 1.3em; cursor: pointer; font-size: 1.05em; color: var(--accent); border: none; background: none; border-bottom: 3px solid transparent; border-radius: 10px 10px 0 0; margin-bottom: -2.5px; transition: color 0.2s, border-bottom 0.2s;">Recursos</span>
                 </div>
-                <div style="flex: 2 1 320px; min-width: 220px;">
-                    <img src="https://picsum.photos/320/220?random=2" alt="Familia en Adviento" style="width: 100%; border-radius: 10px; box-shadow: 0 2px 8px #e2c9a0; margin-bottom: 0.7em; background: #f8f5f2;" loading="lazy">
-                    <div style="font-size: 0.97em; color: var(--text-secondary); text-align: center;">Compartir la esperanza en familia</div>
+                <div class="tabs-extra-content">
+                    <div class="tab-extra-panel" id="tab1" style="display:block;">
+                        <div style="display: flex; flex-wrap: wrap; gap: 1.2em; align-items: flex-start; margin-bottom: 1.2em;">
+                            <div style="flex: 1 1 180px; min-width: 140px; max-width: 220px;">
+                                <img src="https://picsum.photos/220/160?random=1" alt="Vela de esperanza" style="width: 100%; border-radius: 10px; box-shadow: 0 2px 8px #e2c9a0; margin-bottom: 0.7em; background: #f8f5f2;" loading="lazy">
+                                <div style="font-size: 0.97em; color: var(--text-secondary); text-align: center;">La vela de la esperanza, símbolo del Adviento</div>
+                            </div>
+                            <div style="flex: 2 1 320px; min-width: 220px;">
+                                <img src="https://picsum.photos/320/220?random=2" alt="Familia en Adviento" style="width: 100%; border-radius: 10px; box-shadow: 0 2px 8px #e2c9a0; margin-bottom: 0.7em; background: #f8f5f2;" loading="lazy">
+                                <div style="font-size: 0.97em; color: var(--text-secondary); text-align: center;">Compartir la esperanza en familia</div>
+                            </div>
+                        </div>
+                        <h4 class="extended-reflection" style="color: var(--accent-strong); font-size: 1.25em; margin-bottom: 0.7em; font-family: var(--font-ui); letter-spacing: 1px;">Reflexión extendida</h4>
+                        <p class="extended-reflection-text" style="font-size: 1.08em; color: var(--text-main); background: #f8f5f2; border-radius: 10px; padding: 1.2em; box-shadow: 0 0 12px #e2c9a0;">La esperanza cristiana no es solo un deseo, sino una confianza activa en la presencia de Dios. Este Adviento, se nos invita a mirar más allá de las dificultades y descubrir signos de esperanza en lo cotidiano. La espera se convierte en oportunidad para crecer en fe y abrir el corazón a la novedad de Dios.</p>
+                    </div>
+                    <div class="tab-extra-panel" id="tab2" style="display:none;">
+                        <h4 class="weekly-proposal" style="color: var(--accent); font-size: 1.1em; margin-top: 0.5em; font-family: var(--font-ui);">Propuesta semanal</h4>
+                        <p class="weekly-proposal-text" style="color: var(--text-main); font-size: 1em;">Dedica un momento cada día para identificar una situación en la que puedas sembrar esperanza, ya sea con una palabra, un gesto o una oración por alguien.</p>
+                    </div>
+                    <div class="tab-extra-panel" id="tab3" style="display:none;">
+                        <h4 class="optional-prayer" style="color: var(--accent-strong); font-size: 1.08em; margin-top: 0.5em; font-family: var(--font-ui);">Oración (opcional)</h4>
+                        <p class="optional-prayer-text" style="color: var(--text-secondary); font-style: italic; font-size: 1em;">Señor, ayúdame a ser portador de esperanza en mi entorno. Que tu luz ilumine mis pasos y me anime a confiar en tus promesas. Amén.</p>
+                    </div>
+                    <div class="tab-extra-panel" id="tab4" style="display:none;">
+                        <div class="media-links" style="margin-top: 1em; text-align: center;">
+                            <a href="https://www.youtube.com/watch?v=QH2-TGUlwu4" target="_blank" style="display: inline-block; margin: 0 1.5em; color: var(--accent); font-weight: bold; text-decoration: none; font-size: 1.08em;">🎵 Canción infantil</a>
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" style="display: inline-block; margin: 0 1.5em; color: var(--accent-strong); font-weight: bold; text-decoration: none; font-size: 1.08em;">🎬 Video para niños</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <h4 class="extended-reflection" style="color: var(--accent-strong); font-size: 1.25em; margin-bottom: 0.7em; font-family: var(--font-ui); letter-spacing: 1px;">Reflexión extendida</h4>
-            <p class="extended-reflection-text" style="font-size: 1.08em; color: var(--text-main); background: #f8f5f2; border-radius: 10px; padding: 1.2em; box-shadow: 0 0 12px #e2c9a0;">
-                La esperanza cristiana no es solo un deseo, sino una confianza activa en la presencia de Dios. Este Adviento, se nos invita a mirar más allá de las dificultades y descubrir signos de esperanza en lo cotidiano. La espera se convierte en oportunidad para crecer en fe y abrir el corazón a la novedad de Dios.
-            </p>
-            <h4 class="weekly-proposal" style="color: var(--accent); font-size: 1.1em; margin-top: 1.5em; font-family: var(--font-ui);">Propuesta semanal</h4>
-            <p class="weekly-proposal-text" style="color: var(--text-main); font-size: 1em;">
-                Dedica un momento cada día para identificar una situación en la que puedas sembrar esperanza, ya sea con una palabra, un gesto o una oración por alguien.
-            </p>
-            <h4 class="optional-prayer" style="color: var(--accent-strong); font-size: 1.08em; margin-top: 1.5em; font-family: var(--font-ui);">Oración (opcional)</h4>
-            <p class="optional-prayer-text" style="color: var(--text-secondary); font-style: italic; font-size: 1em;">
-                Señor, ayúdame a ser portador de esperanza en mi entorno. Que tu luz ilumine mis pasos y me anime a confiar en tus promesas. Amén.
-            </p>
-            <div class="media-links" style="margin-top: 2em; text-align: center;">
-                <a href="https://www.youtube.com/watch?v=QH2-TGUlwu4" target="_blank" style="display: inline-block; margin: 0 1.5em; color: var(--accent); font-weight: bold; text-decoration: none; font-size: 1.08em;">🎵 Canción infantil</a>
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" style="display: inline-block; margin: 0 1.5em; color: var(--accent-strong); font-weight: bold; text-decoration: none; font-size: 1.08em;">🎬 Video para niños</a>
-            </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var tabLinks = document.querySelectorAll('.tab-extra-link');
+                    var tabPanels = document.querySelectorAll('.tab-extra-panel');
+                    tabLinks.forEach(function(link) {
+                        link.addEventListener('click', function() {
+                            tabLinks.forEach(function(l) {
+                                l.classList.remove('active');
+                                l.style.color = 'var(--accent)';
+                                l.style.borderBottom = '3px solid transparent';
+                            });
+                            link.classList.add('active');
+                            link.style.color = 'var(--accent-strong)';
+                            link.style.borderBottom = '3px solid var(--accent-strong)';
+                            var tab = link.getAttribute('data-tab');
+                            tabPanels.forEach(function(panel) {
+                                panel.style.display = (panel.id === tab) ? 'block' : 'none';
+                            });
+                        });
+                    });
+                });
+            </script>
         </div>
-        {% elif 'freeUser' in user_groups %}
-        <div class="premium-blocker" style="background: #ffe0e0; border-radius: 12px; padding: 1.5em; margin-bottom: 1.5em; text-align: center;">
+        {% else %}
+        <div class="premium-blocker"
+            style="background: #ffe0e0; border-radius: 12px; padding: 1.5em; margin-bottom: 1.5em; text-align: center;">
             <h4 class="teaser-title" style="color: #f67280;">Reflexión extendida</h4>
             <p class="teaser-text" style="color: #888;">
                 Descubre una reflexión más profunda sobre la esperanza y propuestas para vivir el Adviento.
             </p>
             <div class="upgrade-message">
                 <p class="calm-upgrade-text" style="color: #4a90e2;">
-                    Para acceder a este contenido especial, puedes ampliar tu experiencia. El acceso premium ofrece recursos adicionales para acompañar tu camino espiritual.
+                    Para acceder a este contenido especial, puedes ampliar tu experiencia. El acceso premium ofrece
+                    recursos adicionales para acompañar tu camino espiritual.
                 </p>
-                <a href="{% url 'upgrade' %}" class="upgrade-link" style="color: #ffb347; font-weight: bold;">Conocer más sobre el acceso premium</a>
+                <a href="{% url 'upgrade' %}" class="upgrade-link" style="color: #ffb347; font-weight: bold;">Conocer
+                    más sobre el acceso premium</a>
             </div>
         </div>
         {% endif %}

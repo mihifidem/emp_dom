@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Domingos publicados{% endblock %}
+{% block content %}
+<div class="domingo-list-container earthy-theme" style="background: var(--bg-neutral); border-radius: 20px; max-width: 800px; margin: 2.5em auto; box-shadow: 0 4px 24px var(--shadow-tech); border: 2px solid var(--accent-soft); padding: 2.2em 1.2em;">
+    <h1 style="color: var(--accent); font-size: 2em; font-family: var(--font-ui); text-align: center; margin-bottom: 1.5em;">Domingos publicados</h1>
+    <ul style="list-style: none; padding: 0;">
+        {% for d in domingos %}
+        <li style="margin-bottom: 1.2em; padding-bottom: 1.2em; border-bottom: 1px solid var(--accent-soft);">
+            <a href="{% url 'domingo_detail' slug=d.slug %}" style="font-size: 1.15em; color: var(--accent-strong); font-weight: 600; text-decoration: none;">
+                {{ d.title }}
+            </a>
+            <div style="color: var(--text-secondary); font-size: 0.98em;">{{ d.liturgical_time }} &mdash; Domingo #{{ d.sunday_number }}</div>
+            <div style="color: var(--accent); font-size: 1em; margin-top: 0.2em;">{{ d.central_message }}</div>
+        </li>
+        {% empty %}
+        <li style="color: var(--text-secondary); text-align: center;">No hay domingos publicados.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

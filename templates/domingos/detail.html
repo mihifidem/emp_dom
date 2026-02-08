@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}{{ domingo.title }}{% endblock %}
+{% block content %}
+<div class="domingo-detail-container earthy-theme" style="background: var(--bg-neutral); border-radius: 20px; max-width: 720px; margin: 2.5em auto; box-shadow: 0 4px 24px var(--shadow-tech); border: 2px solid var(--accent-soft); padding: 2.2em 1.2em;">
+    <header style="text-align: center; margin-bottom: 1.7em;">
+        <h2 style="color: var(--accent-strong); font-size: 1.15em; letter-spacing: 1px; margin-bottom: 0.2em;">{{ domingo.liturgical_time }}</h2>
+        <h1 style="color: var(--accent); font-size: 2em; font-family: var(--font-ui); margin-bottom: 0.1em;">{{ domingo.title }}</h1>
+    </header>
+    <section style="margin-bottom: 2em;">
+        <h3 style="color: var(--accent); font-size: 1.15em; margin-bottom: 0.5em; text-align: center;">Mensaje central</h3>
+        <blockquote style="font-family: var(--font-ui); color: var(--accent); font-size: 1.15em; text-align: center; background: #f8f5f2; border-left: 6px solid var(--accent-strong); margin: 0 auto 1em auto; max-width: 400px; padding: 0.5em 1em;">
+            {{ domingo.central_message }}
+        </blockquote>
+    </section>
+    <section style="margin-bottom: 2em;">
+        <h3 style="color: var(--accent-strong); font-size: 1.08em; margin-bottom: 0.5em;">Contenido editorial</h3>
+        <div style="background: #fff; border-radius: 12px; box-shadow: 0 2px 8px #e2c9a0; padding: 1.2em; color: #222;">
+            {{ domingo.free_content|linebreaks }}
+        </div>
+    </section>
+
+
+    {% if request.user.is_authenticated and (request.user.groups.all|pluck:'name'|join:','|contains:'premiumUser' or request.user.groups.all|pluck:'name'|join:','|contains:'admin') %}
+        <section style="margin-bottom: 2em;">
+            <h3 style="color: var(--accent); font-size: 1.08em; margin-bottom: 0.5em;">Contenido premium</h3>
+            <div style="background: var(--accent-soft); border-radius: 12px; box-shadow: 0 2px 8px #e2c9a0; padding: 1.2em; color: var(--text-main);">
+                {{ domingo.premium_content|linebreaks }}
+            </div>
+        </section>
+    {% elif request.user.is_authenticated and request.user.groups.all|pluck:'name'|join:','|contains:'freeUser' %}
+        <section style="margin-bottom: 2em;">
+            <h3 style="color: var(--accent); font-size: 1.08em; margin-bottom: 0.5em;">Contenido premium</h3>
+            <div style="background: #f8f5f2; border-radius: 12px; box-shadow: 0 2px 8px #e2c9a0; padding: 1.2em; color: var(--text-secondary); text-align: center;">
+                <p style="margin: 0; font-size: 1.05em;">Este contenido está disponible para quienes apoyan el proyecto con acceso premium.<br>
+                Si en algún momento deseas profundizar, encontrarás aquí recursos adicionales para tu camino personal.<br>
+                Gracias por ser parte de la comunidad.</p>
+            </div>
+        </section>
+    {% endif %}
+
+    {% if request.user.is_authenticated and request.user.groups.all|pluck:'name'|join:','|contains:'admin' %}
+    <section style="margin-bottom: 2em;">
+        <h3 style="color: #b71c1c; font-size: 1.08em; margin-bottom: 0.5em;">Notas administrativas</h3>
+        <div style="background: #fff3e0; border-radius: 12px; box-shadow: 0 2px 8px #e2c9a0; padding: 1.2em; color: #b71c1c;">
+            {{ domingo.admin_notes|linebreaks }}
+        </div>
+    </section>
+    {% endif %}
+</div>
+{% endblock %}
